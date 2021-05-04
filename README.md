@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+# Getting Started with React Router
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 1).
+Go to react-reouter website and install react routers to your react app
 
-## Available Scripts
+## 2).
+In the React app create a file by the name of roter and import {Browser Router as Router, Route} from 'react-router-dom'
 
-In the project directory, you can run:
+## 3).
+Inside the component we have to create routes. We are going to use the two things that we imported from rect-router
+## 4). 
+Router is the parent tag and inside of it we will create Route as child component, route could be self closing
+## 5). 
+A route takes two attributes first is path and second is component. Path is a keword like '/' or '/home', '/about' etc. In the component you place the name of the component you want to show on that path. Path is in inverted comma ans component is in curly brackets Example:
+<!-- <Router>
+	<Route path="/" component={Home} />
 
-### `yarn start`
+<Router/> -->
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 6). 
+Now you have to import the component in your router file explicitly and then use its name inside the comopnent 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 7). 
+The Route component has another prop by the name of exact which makes sure that when the path is exactly same as mentioned then only render this route. 
 
-### `yarn test`
+## 8). 
+You have to export default Router component. Now import the Router component inside App.js file
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 9).
+Now you have created multiple components and want to link them. You can do this using Link tag provided by 'react-router-dom'. The Link tag takes to prop in which you specify the path of the component. The Link is imported in the page from where you want to route to.
+<!-- <Link to="/about"/> -->
 
-### `yarn build`
+# Using Javascript for Routing
+You can use JS to route between components. The component that is placed inside the Router has a prop by the name of history. The history prop has many other objects inside of it by the name of location and other. In the history object we have different methods like go, goBack, goForward, push etc. 
+This method can be in case when you want a user authentication first and then you want the user to go on to another page. The authentication is done in a functio, so thats why use this method
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 1). 
+Create a button inside the Home or About component and pass an onClick event. Inside the event pass a function.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 2). 
+Inside the function we are going to taret the push method inside the history function. Push method is used to move from one component to other. Inside the push method we are going to give the path of the component where we want to go.
